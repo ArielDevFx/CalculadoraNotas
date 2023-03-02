@@ -1,6 +1,10 @@
 function calcularNotaFinal() {
-  let notaDeGrado = parseFloat(document.getElementById("notaDeGrado").value);
-  let notaDeExamen = parseFloat(document.getElementById("notaDeExamen").value);
+  let notaDeGrado = parseFloat(
+    document.getElementById("notaDeGrado").value.replace(",", ".")
+  );
+  let notaDeExamen = parseFloat(
+    document.getElementById("notaDeExamen").value.replace(",", ".")
+  );
 
   notaDeGrado = notaDeGrado * 100;
   notaDeGrado = notaDeGrado * 0.75;
@@ -9,5 +13,5 @@ function calcularNotaFinal() {
   let notaFinal = notaDeGrado + notaDeExamen;
 
   document.getElementById("resultado").innerHTML =
-    "La nota final es: " + notaFinal.toFixed(2);
+    "La nota final es: " + notaFinal.toFixed(2).replace(".", ",");
 }
