@@ -13,7 +13,7 @@ function calcularNotaFinal() {
   let notaFinal = notaDeGrado + notaDeExamen;
 
   document.getElementById("resultado").innerHTML =
-    "La nota final es: " + notaFinal.toFixed(2).replace(".", ",");
+    "Su nota final: " + notaFinal.toFixed(2).replace(".", ",");
 }
 
 function redirectToInstagram(event) {
