@@ -15,3 +15,15 @@ function calcularNotaFinal() {
   document.getElementById("resultado").innerHTML =
     "La nota final es: " + notaFinal.toFixed(2).replace(".", ",");
 }
+
+function redirectToInstagram(event) {
+  event.preventDefault();
+  const instagramUrl = "instagram://user?username=arieldevfx";
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isMobile = /iphone|ipod|ipad|android/.test(userAgent);
+  if (isMobile && instagramUrl) {
+    window.location.href = instagramUrl;
+  } else {
+    window.location.href = event.target.href;
+  }
+}
